@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="`en`">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        li {
+            list-style: none;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        span {
+            font-weight: bolder;
+        }
+    </style>
+    <title>Products Page</title>
+</head>
+<body>
+<h1>All Products</h1>
+<div class="container">
+<% for (let p of product) {%>
+    <ul>
+        <li style="font-size: 1.5rem"><%=p.name%></li>
+        <li><span>Price:</span> $<%=p.price%></li>
+        <li><span>Description:</span> <%=p.description%></li>
+        <li><span>Category:</span> <%=p.category%></li>
+    </ul>
+
+<%}%>
+</div>
+</body>
+</html>
