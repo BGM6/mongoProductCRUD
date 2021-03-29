@@ -30,9 +30,20 @@ app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//CRUD
 app.get('/products', async (req, res) => {
 		const product = await Product.find({});
 		res.render('products', { product });
+})
+//create
+app.get('/products/new', (req, res) => {
+		res.render('new')
+})
+
+app.post('/products/new', async (req, res) => {
+		const newProduct = new Product(req.body);
+		await newProduct.save();
+		res.redirect('/products');
 })
 
 app.listen(PORT, () => {
