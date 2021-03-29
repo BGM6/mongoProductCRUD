@@ -24,7 +24,7 @@
 <div class="container">
 <% for (let p of product) {%>
     <ul>
-        <li style="font-size: 1.5rem"><%=p.name%></li>
+        <li style="font-size: 1.5rem"><a href="/products/<%=p._id%>"><%=p.name%></a></li>
         <li><span>Price:</span> $<%=p.price%></li>
         <li><span>Description:</span> <%=p.description%></li>
         <li><span>Category:</span> <%=p.category%></li>
