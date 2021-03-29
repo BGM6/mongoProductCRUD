@@ -4,17 +4,17 @@ const product = require('../controllers/productControllers');
 const catchAsync = require('../utils/catchAsync');
 
 router.route('/')
-.get(product.renderProducts)
+.get(catchAsync(product.renderProducts))
 
 router.route('/new')
-.get(product.renderNewProduct)
-.post(product.newProduct)
+.get(catchAsync(product.renderNewProduct))
+.post(catchAsync(product.newProduct))
 
-router.get('/:id/update', product.renderUpdate)
+router.get('/:id/update', catchAsync(product.renderUpdate))
 
 router.route('/:id')
-.get(product.renderShowPage)
-.put(product.updateProduct)
-.delete(product.delete)
+.get(catchAsync(product.renderShowPage))
+.put(catchAsync(product.updateProduct))
+.delete(catchAsync(product.delete))
 
 module.exports = router;
