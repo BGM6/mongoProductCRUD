@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const product = require('../controllers/productControllers');
+const catchAsync = require('../utils/catchAsync');
 
 router.route('/')
 .get(product.renderProducts)
